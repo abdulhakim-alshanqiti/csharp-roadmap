@@ -49,11 +49,11 @@
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMessageBox.cs">
+    <Compile Include="Experiments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMessageBox.Designer.cs">
-      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    <Compile Include="Experiments.Designer.cs">
+      <DependentUpon>Experiments.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -66,8 +66,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMessageBox.resx">
-      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    <EmbeddedResource Include="Experiments.resx">
+      <DependentUpon>Experiments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

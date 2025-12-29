@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
+
 
 namespace Pizza_App
 {
     public partial class MainForm : Form
     {
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -13,73 +15,29 @@ namespace Pizza_App
 
         private void btnOrderPizza_Click(object sender, System.EventArgs e)
         {
-            decimal Cash = 0;
 
-            if (!radioThick.Checked && !radioThin.Checked)
-            {
-                MessageBox.Show("Please Choose A Crust Type For The Pizza !", "Error Occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (!radioEatIn.Checked && !radioTakeOut.Checked)
-            {
-                MessageBox.Show("Please Choose The Place You Want The Pizza To Be !", "Error Occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            gbPlace.Enabled = false;
+            gbSize.Enabled = false;
+            gbCrust.Enabled = false;
+            gbToppings.Enabled = false;
 
-
-
-            decimal pToppings = 0;
-            foreach (CheckBox checkBox in gbToppings.Controls)
-            {
-                if (checkBox.Checked)
-                {
-                    pToppings += 2.75m;
-                    labelToppings.Text += checkBox.Text + ",";
-                }
-
-            }
-            labelToppings.Text = labelToppings.Text.Substring(0, labelToppings.Text.Length - 1);
-
-
-            Dictionary<string, decimal> PizzaSize = new Dictionary<string, decimal>
-            {
-                ["Small"] = 15m,
-                ["Medium"] = 20m,
-                ["Large"] = 25m,
-            };
-
-            decimal pPizzaSize = 0;
-            foreach (RadioButton Radio in gbSize.Controls)
-            {
-                if (Radio.Checked)
-                {
-                    PizzaSize.TryGetValue(Radio.Text, out pPizzaSize);
-                    labelSize.Text += Radio.Text;
-                }
-            }
-            if (pPizzaSize == 0)
-            {
-                MessageBox.Show("Please Choose A Pizza Size !", "Error Occured", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-
-
-            Cash += pToppings + pPizzaSize;
-            labelCash.Text = Cash.ToString() + "$";
-
-
-            labelCrust.Text = "Crust Type : " + ((radioThick.Checked) ? "Thick" : "Thin");
-            labelWhereToEat.Text = "Where To Eat : " + ((radioEatIn.Checked) ? "Eat In" : "Take Out");
+            UpdateOrderSummary();
         }
 
-        private void btnResetForm_Click(object sender, EventArgs e)
+        private void ResetForm(object sender, EventArgs e)
         {
-            labelCash.Text = "0$";
-            labelToppings.Text = "Toppings : ";
-            labelSize.Text = "Size : ";
-            labelCrust.Text = "Crust Type : ";
-            labelWhereToEat.Text = "Where To Eat : ";
+            labelTotalPrice.Text = "0$";
+            labelToppings1.Text = "";
+            labelSize.Text = "";
+            labelCrust.Text = "";
+            labelWhereToEat.Text = "";
+
+            gbPlace.Enabled = true;
+            gbSize.Enabled = true;
+            gbCrust.Enabled = true;
+            gbToppings.Enabled = true;
+
+
             foreach (RadioButton radioBtn in this.gbPlace.Controls)
             {
 
@@ -106,6 +64,109 @@ namespace Pizza_App
             }
 
 
+            radioEatIn.Checked = true;
+            radioSmall.Checked = true;
+            radioThin.Checked = true;
+            chkExtraCheese.Checked = true;
+
+            UpdateOrderSummary();
+        }
+
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            UpdateOrderSummary();
+        }
+
+        private void UpdateOrderSummary()
+        {
+            UpdateToppings();
+            UpdateSize();
+            UpdateCrust();
+            UpdateWhereToEat();
+            UpdateTotalPrice();
+        }
+        private void UpdateTotalPrice(object sender = null, EventArgs e = null)
+        {
+            float Cash = 0;
+
+            Cash += CalculateToppingsPrice() + CalculateSizePrice() + CalculateCrustPrice();
+            labelTotalPrice.Text = Cash.ToString() + "$";
+        }
+
+        private float CalculateCrustPrice()
+        {
+            return (radioThin.Checked) ? 0 : 5;
+        }
+
+        private float CalculateSizePrice()
+        {
+            foreach (RadioButton Radio in gbSize.Controls)
+                if (Radio.Checked)
+                    return Convert.ToSingle(Radio.Tag.ToString());
+            return 0f;
+        }
+
+        private float CalculateToppingsPrice()
+        {
+            float pToppings = 0;
+            foreach (CheckBox checkBox in gbToppings.Controls)
+            {
+
+                if (checkBox.Checked)
+                {
+                    pToppings += Convert.ToSingle(checkBox.Tag.ToString());
+                }
+
+            }
+            return pToppings;
+        }
+
+        private void UpdateToppings(object sender = null, EventArgs e = null)
+        {
+            UpdateTotalPrice();
+            string sToppings = "";
+            float pToppings = 0;
+            foreach (CheckBox checkBox in gbToppings.Controls)
+            {
+
+                if (checkBox.Checked)
+                {
+                    pToppings += float.Parse(checkBox.Tag.ToString());
+
+                    sToppings += checkBox.Text + ", ";
+                }
+
+            }
+
+            labelToppings1.Text = sToppings.Remove(sToppings.Length - 2, 2);
+        }
+
+        private void UpdateWhereToEat(object sender = null, EventArgs e = null)
+        {
+            labelWhereToEat.Text = ((radioEatIn.Checked) ? "Eat In" : "Take Out");
+        }
+
+        private void UpdateCrust(object sender = null, EventArgs e = null)
+        {
+            UpdateTotalPrice();
+            labelCrust.Text = ((radioThin.Checked) ? "Thin" : "Thick");
+        }
+
+        private void UpdateSize(object sender = null, EventArgs e = null)
+        {
+            UpdateTotalPrice();
+            if (sender == null)
+            {
+                foreach (RadioButton Radio in gbSize.Controls)
+                    if (Radio.Checked)
+                    { labelSize.Text = Radio.Text; return; }
+            }
+            else
+            {
+                RadioButton radio = (RadioButton)sender;
+                labelSize.Text = radio.Text;
+            }
 
         }
     }
