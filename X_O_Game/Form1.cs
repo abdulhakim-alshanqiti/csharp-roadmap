@@ -2,8 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 using X_O_Game.Properties;
-using static XandO;
-enum XandO { X, O, None };
+using static Player;
+enum Player { X, O };
 
 namespace X_O_Game
 {
@@ -12,57 +12,37 @@ namespace X_O_Game
 
     public partial class Form1 : Form
     {
-        bool GameOver = false;
-        bool Draw = false;
+
+
+
         string PlayerXWin = "Player 1 Wins (X)";
         string PlayerOWin = "Player 2 Wins (O)";
 
         string PlayerXTurn = "Player 1 Turn (X)";
         string PlayerOTurn = "Player 2 Turn (O)";
 
+        Player CurrentPlayer = X;
+        enum enResult { GameIsInProgress, Win, Draw };
 
-        XandO[,] XAndOMap = {
-                {None,None,None},
-                {None,None,None},
-                {None,None,None},
-            };
-        XandO CurrentPlayer = X;
-
-
-        private void DrawMap()
+        struct stGameStatus
         {
-
-            for (byte i = 0; i < 3; i++)
-            {
-                for (byte j = 0; j < 3; j++)
-                {
-
-                    Control[] controls = groupBox1.Controls.Find("pb" + i + j, false);
-                    PictureBox picBox = (PictureBox)controls[0];
-
-                    switch (XAndOMap[i, j])
-                    {
-                        case X:
-                            picBox.Image = Resources.X;
-                            break;
-                        case O:
-                            picBox.Image = Resources.O;
-                            break;
-                        case None:
-                            picBox.Image = Resources.question_mark_96;
-                            break;
-
-                    }
-                }
-            }
-
+            public enResult Result;
+            public byte PlayCount;
         }
+        stGameStatus GameStatus;
+
+
+
+
+
         public Form1()
         {
             InitializeComponent();
+
         }
         private void Group1_Paint(object sender, PaintEventArgs e)
         {
+
 
 
             e.Graphics.Clear(BackColor); // Clears the background
@@ -79,134 +59,83 @@ namespace X_O_Game
             e.Graphics.DrawLine(pen, new PointF(50, 120), new PointF(400, 120));
             e.Graphics.DrawLine(pen, new PointF(50, 240), new PointF(400, 240));
 
-            DrawMap();
-        }
-        private PictureBox IndexTubleToPictureBox(byte[] index)
-        {
-            Control[] controls = groupBox1.Controls.Find("pb" + index[0] + index[1], false);
-            return (PictureBox)controls[0];
-        }
-        private void TurnBoxesGreen(byte[] index1, byte[] index2, byte[] index3)
-        {
-            IndexTubleToPictureBox(index1).BackColor = Color.Green;
-            IndexTubleToPictureBox(index2).BackColor = Color.Green;
-            IndexTubleToPictureBox(index3).BackColor = Color.Green;
-
 
         }
-        private void CheckDiagonally()
+        private void TurnBoxesGreen(PictureBox B1, PictureBox B2, PictureBox B3)
         {
-            if (XAndOMap[0, 0] == X && XAndOMap[1, 1] == X && XAndOMap[2, 2] == X)
-            {
-                labelPlayerWon.Text = PlayerXWin;
-                TurnBoxesGreen(new byte[] { 0, 0 }, new byte[] { 1, 1 }, new byte[] { 2, 2 });
-            }
-            else if (XAndOMap[0, 2] == X && XAndOMap[1, 1] == X && XAndOMap[2, 0] == X)
-            {
-                labelPlayerWon.Text = PlayerXWin;
-                TurnBoxesGreen(new byte[] { 0, 2 }, new byte[] { 1, 1 }, new byte[] { 2, 0 });
-            }
-
-            else if (XAndOMap[0, 0] == O && XAndOMap[1, 1] == O && XAndOMap[2, 2] == O)
-            {
-                labelPlayerWon.Text = PlayerOWin;
-                TurnBoxesGreen(new byte[] { 0, 0 }, new byte[] { 1, 1 }, new byte[] { 2, 2 });
-            }
-
-            else if (XAndOMap[0, 2] == O && XAndOMap[1, 1] == O && XAndOMap[2, 0] == O)
-            {
-                labelPlayerWon.Text = PlayerOWin;
-                TurnBoxesGreen(new byte[] { 0, 2 }, new byte[] { 1, 1 }, new byte[] { 2, 0 });
-            }
+            B1.BackColor = Color.Green;
+            B2.BackColor = Color.Green;
+            B3.BackColor = Color.Green;
         }
-
-        private void CheckVertically()
+        private void CheckValues(PictureBox B1, PictureBox B2, PictureBox B3)
         {
+            string B1String = B1.Tag.ToString();
+            string B2String = B2.Tag.ToString();
+            string B3String = B3.Tag.ToString();
 
-            for (byte i = 0; i < 3; i++)
+            if (B1String != "?" && B1String == B2String && B1String == B3String)
             {
-                if (XAndOMap[0, i] == O && XAndOMap[1, i] == O && XAndOMap[2, i] == O)
-                {
-                    labelPlayerWon.Text = PlayerOWin;
-                    TurnBoxesGreen(new byte[] { 0, i }, new byte[] { 1, i }, new byte[] { 2, i });
-                }
-                else if (XAndOMap[0, i] == X && XAndOMap[1, i] == X && XAndOMap[2, i] == X)
-                {
+                TurnBoxesGreen(B1, B2, B3);
+
+                if (B1String == "X")
                     labelPlayerWon.Text = PlayerXWin;
-                    TurnBoxesGreen(new byte[] { 0, i }, new byte[] { 1, i }, new byte[] { 2, i });
-                }
-            }
-        }
-        private void CheckHorozontally()
-        {
-
-            for (byte i = 0; i < 3; i++)
-            {
-                if (XAndOMap[i, 0] == O && XAndOMap[i, 1] == O && XAndOMap[i, 2] == O)
-                {
+                else
                     labelPlayerWon.Text = PlayerOWin;
-                    TurnBoxesGreen(new byte[] { i, 0 }, new byte[] { i, 1 }, new byte[] { i, 2 });
-                }
-                else if (XAndOMap[i, 0] == X && XAndOMap[i, 1] == X && XAndOMap[i, 2] == X)
-                {
-                    labelPlayerWon.Text = PlayerXWin;
-                    TurnBoxesGreen(new byte[] { i, 0 }, new byte[] { i, 1 }, new byte[] { i, 2 });
-                }
+
             }
+
         }
 
         private void ChoiceButton_CLick(object sender, System.EventArgs e)
         {
 
-            if (GameOver || Draw)
+            if (GameStatus.Result == enResult.Draw || GameStatus.Result == enResult.Win)
             {
                 return;
             }
 
             PictureBox picBox = (PictureBox)sender;
-            string IndexString = picBox.Name.Remove(0, 2);
-
-            byte i = Convert.ToByte(Convert.ToString(IndexString[0]));
-            byte j = Convert.ToByte(Convert.ToString(IndexString[1]));
-
-
-
-
+            if (picBox.Tag.ToString() != "?")
+            {
+                return;
+            }
 
             if (CurrentPlayer == X)
             {
-                XAndOMap[i, j] = X;
+                picBox.Tag = CurrentPlayer.ToString();
+                picBox.Image = Resources.X;
                 CurrentPlayer = O;
                 labelPlayerTurn.Text = PlayerOTurn;
             }
             else
             {
-                XAndOMap[i, j] = O;
+                picBox.Tag = CurrentPlayer.ToString();
+                picBox.Image = Resources.O;
                 CurrentPlayer = X;
                 labelPlayerTurn.Text = PlayerXTurn;
             }
 
-
-            DrawMap();
-
-            CheckHorozontally();
-
-            CheckVertically();
-
-            CheckDiagonally();
+            CheckValues(pb1, pb2, pb3);
+            CheckValues(pb4, pb5, pb6);
+            CheckValues(pb7, pb8, pb9);
 
 
-            byte EmptyBoxes = 0;
-            foreach (XandO Box in XAndOMap)
+            CheckValues(pb1, pb4, pb7);
+            CheckValues(pb2, pb5, pb8);
+            CheckValues(pb3, pb6, pb9);
+
+
+            CheckValues(pb1, pb5, pb9);
+            CheckValues(pb3, pb5, pb7);
+
+
+            GameStatus.PlayCount--;
+
+            if (GameStatus.PlayCount == 0 && GameStatus.Result != enResult.Win)
             {
-                if (Box == None) EmptyBoxes++;
-
-
-            }
-            if (EmptyBoxes == 0 && !GameOver)
-            {
-                Draw = true;
+                GameStatus.Result = enResult.Draw;
                 labelPlayerWon.Text = "Draw";
+                labelPlayerTurn.Text = "Game Over";
             }
 
         }
@@ -215,31 +144,26 @@ namespace X_O_Game
         {
             if (labelPlayerWon.Text != "" && labelPlayerWon.Text != "Draw")
             {
-                GameOver = true;
+                GameStatus.Result = enResult.Win;
                 labelPlayerTurn.Text = "Game Over";
             }
         }
 
         private void RestartButton_Click(object sender, EventArgs e)
         {
-            GameOver = false;
+            GameStatus.Result = enResult.GameIsInProgress;
+
+            GameStatus.PlayCount = 9;
             labelPlayerTurn.Text = PlayerXTurn;
             CurrentPlayer = X;
             labelPlayerWon.Text = "";
+
             foreach (PictureBox picBox in groupBox1.Controls)
             {
-                picBox.Image = Resources.question_mark_96;
+                picBox.Tag = "?";
                 picBox.BackColor = Color.Black;
+                picBox.Image = Resources.question_mark_96;
             }
-
-            XAndOMap = new XandO[,] {
-                { None,None,None},
-                { None,None,None},
-                { None,None,None},
-            };
-
-            DrawMap();
-
 
         }
     }

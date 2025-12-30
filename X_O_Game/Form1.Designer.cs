@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pb10 = new System.Windows.Forms.PictureBox();
-            this.pb11 = new System.Windows.Forms.PictureBox();
-            this.pb02 = new System.Windows.Forms.PictureBox();
-            this.pb12 = new System.Windows.Forms.PictureBox();
-            this.pb01 = new System.Windows.Forms.PictureBox();
-            this.pb20 = new System.Windows.Forms.PictureBox();
-            this.pb00 = new System.Windows.Forms.PictureBox();
-            this.pb21 = new System.Windows.Forms.PictureBox();
-            this.pb22 = new System.Windows.Forms.PictureBox();
+            this.pb4 = new System.Windows.Forms.PictureBox();
+            this.pb5 = new System.Windows.Forms.PictureBox();
+            this.pb3 = new System.Windows.Forms.PictureBox();
+            this.pb6 = new System.Windows.Forms.PictureBox();
+            this.pb2 = new System.Windows.Forms.PictureBox();
+            this.pb7 = new System.Windows.Forms.PictureBox();
+            this.pb1 = new System.Windows.Forms.PictureBox();
+            this.pb8 = new System.Windows.Forms.PictureBox();
+            this.pb9 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelPlayerWon = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,134 +44,143 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pb10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb02)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb01)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb00)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb9)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pb10
+            // pb4
             // 
-            this.pb10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb10.Image = global::X_O_Game.Properties.Resources.question_mark_96;
-            this.pb10.Location = new System.Drawing.Point(66, 206);
-            this.pb10.Margin = new System.Windows.Forms.Padding(0);
-            this.pb10.Name = "pb10";
-            this.pb10.Size = new System.Drawing.Size(136, 130);
-            this.pb10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb10.TabIndex = 3;
-            this.pb10.TabStop = false;
-            this.pb10.Click += new System.EventHandler(this.ChoiceButton_CLick);
+            this.pb4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb4.Image = global::X_O_Game.Properties.Resources.question_mark_96;
+            this.pb4.Location = new System.Drawing.Point(66, 206);
+            this.pb4.Margin = new System.Windows.Forms.Padding(0);
+            this.pb4.Name = "pb4";
+            this.pb4.Size = new System.Drawing.Size(136, 130);
+            this.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb4.TabIndex = 3;
+            this.pb4.TabStop = false;
+            this.pb4.Tag = "?";
+            this.pb4.Click += new System.EventHandler(this.ChoiceButton_CLick);
             // 
-            // pb11
+            // pb5
             // 
-            this.pb11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb11.Image = global::X_O_Game.Properties.Resources.question_mark_96;
-            this.pb11.Location = new System.Drawing.Point(262, 206);
-            this.pb11.Margin = new System.Windows.Forms.Padding(0);
-            this.pb11.Name = "pb11";
-            this.pb11.Size = new System.Drawing.Size(136, 130);
-            this.pb11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb11.TabIndex = 4;
-            this.pb11.TabStop = false;
-            this.pb11.Click += new System.EventHandler(this.ChoiceButton_CLick);
+            this.pb5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb5.Image = global::X_O_Game.Properties.Resources.question_mark_96;
+            this.pb5.Location = new System.Drawing.Point(262, 206);
+            this.pb5.Margin = new System.Windows.Forms.Padding(0);
+            this.pb5.Name = "pb5";
+            this.pb5.Size = new System.Drawing.Size(136, 130);
+            this.pb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb5.TabIndex = 4;
+            this.pb5.TabStop = false;
+            this.pb5.Tag = "?";
+            this.pb5.Click += new System.EventHandler(this.ChoiceButton_CLick);
             // 
-            // pb02
+            // pb3
             // 
-            this.pb02.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb02.Image = global::X_O_Game.Properties.Resources.question_mark_96;
-            this.pb02.Location = new System.Drawing.Point(461, 22);
-            this.pb02.Margin = new System.Windows.Forms.Padding(0);
-            this.pb02.Name = "pb02";
-            this.pb02.Size = new System.Drawing.Size(136, 130);
-            this.pb02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb02.TabIndex = 2;
-            this.pb02.TabStop = false;
-            this.pb02.Click += new System.EventHandler(this.ChoiceButton_CLick);
+            this.pb3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb3.Image = global::X_O_Game.Properties.Resources.question_mark_96;
+            this.pb3.Location = new System.Drawing.Point(461, 22);
+            this.pb3.Margin = new System.Windows.Forms.Padding(0);
+            this.pb3.Name = "pb3";
+            this.pb3.Size = new System.Drawing.Size(136, 130);
+            this.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb3.TabIndex = 2;
+            this.pb3.TabStop = false;
+            this.pb3.Tag = "?";
+            this.pb3.Click += new System.EventHandler(this.ChoiceButton_CLick);
             // 
-            // pb12
+            // pb6
             // 
-            this.pb12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb12.Image = global::X_O_Game.Properties.Resources.question_mark_96;
-            this.pb12.Location = new System.Drawing.Point(461, 206);
-            this.pb12.Margin = new System.Windows.Forms.Padding(0);
-            this.pb12.Name = "pb12";
-            this.pb12.Size = new System.Drawing.Size(136, 130);
-            this.pb12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb12.TabIndex = 5;
-            this.pb12.TabStop = false;
-            this.pb12.Click += new System.EventHandler(this.ChoiceButton_CLick);
+            this.pb6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb6.Image = global::X_O_Game.Properties.Resources.question_mark_96;
+            this.pb6.Location = new System.Drawing.Point(461, 206);
+            this.pb6.Margin = new System.Windows.Forms.Padding(0);
+            this.pb6.Name = "pb6";
+            this.pb6.Size = new System.Drawing.Size(136, 130);
+            this.pb6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb6.TabIndex = 5;
+            this.pb6.TabStop = false;
+            this.pb6.Tag = "?";
+            this.pb6.Click += new System.EventHandler(this.ChoiceButton_CLick);
             // 
-            // pb01
+            // pb2
             // 
-            this.pb01.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb01.Image = global::X_O_Game.Properties.Resources.question_mark_96;
-            this.pb01.Location = new System.Drawing.Point(262, 22);
-            this.pb01.Margin = new System.Windows.Forms.Padding(0);
-            this.pb01.Name = "pb01";
-            this.pb01.Size = new System.Drawing.Size(136, 130);
-            this.pb01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb01.TabIndex = 1;
-            this.pb01.TabStop = false;
-            this.pb01.Click += new System.EventHandler(this.ChoiceButton_CLick);
+            this.pb2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb2.Image = global::X_O_Game.Properties.Resources.question_mark_96;
+            this.pb2.Location = new System.Drawing.Point(262, 22);
+            this.pb2.Margin = new System.Windows.Forms.Padding(0);
+            this.pb2.Name = "pb2";
+            this.pb2.Size = new System.Drawing.Size(136, 130);
+            this.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb2.TabIndex = 1;
+            this.pb2.TabStop = false;
+            this.pb2.Tag = "?";
+            this.pb2.Click += new System.EventHandler(this.ChoiceButton_CLick);
             // 
-            // pb20
+            // pb7
             // 
-            this.pb20.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb20.Image = global::X_O_Game.Properties.Resources.question_mark_96;
-            this.pb20.Location = new System.Drawing.Point(66, 390);
-            this.pb20.Margin = new System.Windows.Forms.Padding(0);
-            this.pb20.Name = "pb20";
-            this.pb20.Size = new System.Drawing.Size(136, 130);
-            this.pb20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb20.TabIndex = 6;
-            this.pb20.TabStop = false;
-            this.pb20.Click += new System.EventHandler(this.ChoiceButton_CLick);
+            this.pb7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb7.Image = global::X_O_Game.Properties.Resources.question_mark_96;
+            this.pb7.Location = new System.Drawing.Point(66, 390);
+            this.pb7.Margin = new System.Windows.Forms.Padding(0);
+            this.pb7.Name = "pb7";
+            this.pb7.Size = new System.Drawing.Size(136, 130);
+            this.pb7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb7.TabIndex = 6;
+            this.pb7.TabStop = false;
+            this.pb7.Tag = "?";
+            this.pb7.Click += new System.EventHandler(this.ChoiceButton_CLick);
             // 
-            // pb00
+            // pb1
             // 
-            this.pb00.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb00.Image = global::X_O_Game.Properties.Resources.question_mark_96;
-            this.pb00.Location = new System.Drawing.Point(66, 22);
-            this.pb00.Margin = new System.Windows.Forms.Padding(0);
-            this.pb00.Name = "pb00";
-            this.pb00.Size = new System.Drawing.Size(136, 130);
-            this.pb00.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb00.TabIndex = 0;
-            this.pb00.TabStop = false;
-            this.pb00.Click += new System.EventHandler(this.ChoiceButton_CLick);
+            this.pb1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb1.Image = global::X_O_Game.Properties.Resources.question_mark_96;
+            this.pb1.Location = new System.Drawing.Point(66, 22);
+            this.pb1.Margin = new System.Windows.Forms.Padding(0);
+            this.pb1.Name = "pb1";
+            this.pb1.Size = new System.Drawing.Size(136, 130);
+            this.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb1.TabIndex = 0;
+            this.pb1.TabStop = false;
+            this.pb1.Tag = "?";
+            this.pb1.Click += new System.EventHandler(this.ChoiceButton_CLick);
             // 
-            // pb21
+            // pb8
             // 
-            this.pb21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb21.Image = global::X_O_Game.Properties.Resources.question_mark_96;
-            this.pb21.Location = new System.Drawing.Point(262, 390);
-            this.pb21.Margin = new System.Windows.Forms.Padding(0);
-            this.pb21.Name = "pb21";
-            this.pb21.Size = new System.Drawing.Size(136, 130);
-            this.pb21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb21.TabIndex = 7;
-            this.pb21.TabStop = false;
-            this.pb21.Click += new System.EventHandler(this.ChoiceButton_CLick);
+            this.pb8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb8.Image = global::X_O_Game.Properties.Resources.question_mark_96;
+            this.pb8.Location = new System.Drawing.Point(262, 390);
+            this.pb8.Margin = new System.Windows.Forms.Padding(0);
+            this.pb8.Name = "pb8";
+            this.pb8.Size = new System.Drawing.Size(136, 130);
+            this.pb8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb8.TabIndex = 7;
+            this.pb8.TabStop = false;
+            this.pb8.Tag = "?";
+            this.pb8.Click += new System.EventHandler(this.ChoiceButton_CLick);
             // 
-            // pb22
+            // pb9
             // 
-            this.pb22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb22.Image = global::X_O_Game.Properties.Resources.question_mark_96;
-            this.pb22.Location = new System.Drawing.Point(461, 390);
-            this.pb22.Margin = new System.Windows.Forms.Padding(0);
-            this.pb22.Name = "pb22";
-            this.pb22.Size = new System.Drawing.Size(136, 130);
-            this.pb22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pb22.TabIndex = 8;
-            this.pb22.TabStop = false;
-            this.pb22.Click += new System.EventHandler(this.ChoiceButton_CLick);
+            this.pb9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb9.Image = global::X_O_Game.Properties.Resources.question_mark_96;
+            this.pb9.Location = new System.Drawing.Point(461, 390);
+            this.pb9.Margin = new System.Windows.Forms.Padding(0);
+            this.pb9.Name = "pb9";
+            this.pb9.Size = new System.Drawing.Size(136, 130);
+            this.pb9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb9.TabIndex = 8;
+            this.pb9.TabStop = false;
+            this.pb9.Tag = "?";
+            this.pb9.Click += new System.EventHandler(this.ChoiceButton_CLick);
             // 
             // label1
             // 
@@ -244,15 +253,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pb22);
-            this.groupBox1.Controls.Add(this.pb00);
-            this.groupBox1.Controls.Add(this.pb21);
-            this.groupBox1.Controls.Add(this.pb01);
-            this.groupBox1.Controls.Add(this.pb20);
-            this.groupBox1.Controls.Add(this.pb02);
-            this.groupBox1.Controls.Add(this.pb12);
-            this.groupBox1.Controls.Add(this.pb10);
-            this.groupBox1.Controls.Add(this.pb11);
+            this.groupBox1.Controls.Add(this.pb9);
+            this.groupBox1.Controls.Add(this.pb1);
+            this.groupBox1.Controls.Add(this.pb8);
+            this.groupBox1.Controls.Add(this.pb2);
+            this.groupBox1.Controls.Add(this.pb7);
+            this.groupBox1.Controls.Add(this.pb3);
+            this.groupBox1.Controls.Add(this.pb6);
+            this.groupBox1.Controls.Add(this.pb4);
+            this.groupBox1.Controls.Add(this.pb5);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(700, 604);
@@ -276,15 +285,15 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "TickTackToe";
-            ((System.ComponentModel.ISupportInitialize)(this.pb10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb02)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb01)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb00)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb9)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -293,15 +302,15 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pb10;
-        private System.Windows.Forms.PictureBox pb11;
-        private System.Windows.Forms.PictureBox pb02;
-        private System.Windows.Forms.PictureBox pb12;
-        private System.Windows.Forms.PictureBox pb01;
-        private System.Windows.Forms.PictureBox pb20;
-        private System.Windows.Forms.PictureBox pb00;
-        private System.Windows.Forms.PictureBox pb21;
-        private System.Windows.Forms.PictureBox pb22;
+        private System.Windows.Forms.PictureBox pb4;
+        private System.Windows.Forms.PictureBox pb5;
+        private System.Windows.Forms.PictureBox pb3;
+        private System.Windows.Forms.PictureBox pb6;
+        private System.Windows.Forms.PictureBox pb2;
+        private System.Windows.Forms.PictureBox pb7;
+        private System.Windows.Forms.PictureBox pb1;
+        private System.Windows.Forms.PictureBox pb8;
+        private System.Windows.Forms.PictureBox pb9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelPlayerWon;
         private System.Windows.Forms.Label label2;
