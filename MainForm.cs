@@ -103,7 +103,7 @@ namespace Pizza_App
         {
             foreach (RadioButton Radio in gbSize.Controls)
                 if (Radio.Checked)
-                    return Convert.ToSingle(Radio.Tag.ToString());
+                    return float.Parse(Radio.Tag.ToString());
             return 0f;
         }
 
@@ -115,7 +115,7 @@ namespace Pizza_App
 
                 if (checkBox.Checked)
                 {
-                    pToppings += Convert.ToSingle(checkBox.Tag.ToString());
+                    pToppings += float.Parse(checkBox.Tag.ToString());
                 }
 
             }

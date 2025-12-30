@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Pizza_App
+namespace X_O_Game
 {
     internal static class Program
     {
@@ -13,7 +16,7 @@ namespace Pizza_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Experiments());
+            Application.Run(new Form1());
         }
     }
 }
