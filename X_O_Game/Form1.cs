@@ -89,7 +89,7 @@ namespace X_O_Game
         private void ChoiceButton_CLick(object sender, System.EventArgs e)
         {
 
-            if (GameStatus.Result == enResult.Draw || GameStatus.Result == enResult.Win)
+            if (GameStatus.Result != enResult.GameIsInProgress)
             {
                 return;
             }
@@ -100,16 +100,15 @@ namespace X_O_Game
                 return;
             }
 
+            picBox.Tag = CurrentPlayer.ToString();
             if (CurrentPlayer == X)
             {
-                picBox.Tag = CurrentPlayer.ToString();
                 picBox.Image = Resources.X;
                 CurrentPlayer = O;
                 labelPlayerTurn.Text = PlayerOTurn;
             }
             else
             {
-                picBox.Tag = CurrentPlayer.ToString();
                 picBox.Image = Resources.O;
                 CurrentPlayer = X;
                 labelPlayerTurn.Text = PlayerXTurn;

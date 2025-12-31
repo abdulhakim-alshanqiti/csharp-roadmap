@@ -1,6 +1,6 @@
 <Solution>
   <Folder Name="/Experiments/">
-    <Project Path="Learning/Learning/Drawing.csproj" Id="4d924e85-caca-47a2-a9f9-a5e4a8a84ad7" />
+    <Project Path="Learning/Learning/Learning.csproj" Id="4d924e85-caca-47a2-a9f9-a5e4a8a84ad7" />
   </Folder>
   <Folder Name="/Projects/">
     <Project Path="Pizza App.csproj" Id="3fcc53b1-e9b6-4e3b-8e10-ae5ccd95024e" />

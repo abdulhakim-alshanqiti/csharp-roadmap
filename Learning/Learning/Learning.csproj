@@ -46,16 +46,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="CheckedListBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CheckedListBox.Designer.cs">
+      <DependentUpon>CheckedListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComboBox.Designer.cs">
+      <DependentUpon>ComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DateTimePicker.Designer.cs">
+      <DependentUpon>DateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LinkLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinkLabel.Designer.cs">
+      <DependentUpon>LinkLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonthDatePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthDatePicker.Designer.cs">
+      <DependentUpon>MonthDatePicker.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Timer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timer.Designer.cs">
+      <DependentUpon>Timer.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CheckedListBox.resx">
+      <DependentUpon>CheckedListBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComboBox.resx">
+      <DependentUpon>ComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateTimePicker.resx">
+      <DependentUpon>DateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinkLabel.resx">
+      <DependentUpon>LinkLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthDatePicker.resx">
+      <DependentUpon>MonthDatePicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,7 +107,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Timer.resx">
+      <DependentUpon>Timer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +124,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiwi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watermelon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
