@@ -13,7 +13,7 @@ namespace Pizza_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Experiments());
+            Application.Run(new MainForm());
         }
     }
 }

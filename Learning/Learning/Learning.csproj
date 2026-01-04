@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,6 +65,18 @@
     <Compile Include="DateTimePicker.Designer.cs">
       <DependentUpon>DateTimePicker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs.Designer.cs">
+      <DependentUpon>Dialogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorProvider.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorProvider.Designer.cs">
+      <DependentUpon>ErrorProvider.cs</DependentUpon>
+    </Compile>
     <Compile Include="LinkLabel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,11 +89,29 @@
     <Compile Include="ListView.Designer.cs">
       <DependentUpon>ListView.cs</DependentUpon>
     </Compile>
+    <Compile Include="MDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI.Designer.cs">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDISubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDISubForm.Designer.cs">
+      <DependentUpon>MDISubForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MonthDatePicker.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MonthDatePicker.Designer.cs">
       <DependentUpon>MonthDatePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel.Designer.cs">
+      <DependentUpon>Panel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Progressbar.cs">
@@ -90,11 +121,23 @@
       <DependentUpon>Progressbar.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TapsControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TapsControl.Designer.cs">
+      <DependentUpon>TapsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Timer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Timer.Designer.cs">
       <DependentUpon>Timer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trackbar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trackbar.Designer.cs">
+      <DependentUpon>Trackbar.cs</DependentUpon>
     </Compile>
     <Compile Include="TreeViewer.cs">
       <SubType>Form</SubType>
@@ -111,14 +154,29 @@
     <EmbeddedResource Include="DateTimePicker.resx">
       <DependentUpon>DateTimePicker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs.resx">
+      <DependentUpon>Dialogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorProvider.resx">
+      <DependentUpon>ErrorProvider.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LinkLabel.resx">
       <DependentUpon>LinkLabel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListView.resx">
       <DependentUpon>ListView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MDI.resx">
+      <DependentUpon>MDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDISubForm.resx">
+      <DependentUpon>MDISubForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MonthDatePicker.resx">
       <DependentUpon>MonthDatePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel.resx">
+      <DependentUpon>Panel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Progressbar.resx">
       <DependentUpon>Progressbar.cs</DependentUpon>
@@ -133,8 +191,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TapsControl.resx">
+      <DependentUpon>TapsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Timer.resx">
       <DependentUpon>Timer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trackbar.resx">
+      <DependentUpon>Trackbar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TreeViewer.resx">
       <DependentUpon>TreeViewer.cs</DependentUpon>
